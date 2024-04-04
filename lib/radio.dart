@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 class radioo extends StatefulWidget {
-  final String Title;
-  radioo({ required this.Title});
+  final String title;
+  radioo({ required this.title});
   @override
   State<radioo> createState() => _radiooState();
 }
@@ -15,7 +15,7 @@ class _radiooState extends State<radioo> {
       textDirection: TextDirection.rtl,
       children: [
         Radio(
-          value: 1,
+          value: 2,
           groupValue: _value,
           onChanged:(value){
             setState(() {
@@ -26,7 +26,7 @@ class _radiooState extends State<radioo> {
             }
           },
         ),
-        Text("$Title"),
+        Text(widget.title),
       ],
     );
 

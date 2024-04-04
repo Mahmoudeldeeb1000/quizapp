@@ -1,34 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:quizapp/radio.dart';
-import 'Q2.dart';
+import 'package:quizapp/fetures/views/Home.dart';
 
-
-class Question1 extends StatefulWidget{
+class Question2 extends StatefulWidget{
   @override
-  State<Question1> createState() => _Question1State();
+  State<Question2> createState() => _Question2State();
 }
-class _Question1State extends State<Question1> {
 
-  int score =0;
+class _Question2State extends State<Question2> {
+  int _value=0;
 
-  List<Map<String,dynamic>> questions=[
-    {
-      "title" : "question 1",
-      "answers" : [ "answer1", "answer2"]
-    },
-    {
-      "title" : "question 1",
-      "answers" : [ "answer1", "answer2","answer3"]
-    },
-  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
           Container(
-            width: double.infinity,
+            width: 375,
             height: 125,
             decoration: BoxDecoration(
                 color: Color(0xff006672),
@@ -70,11 +58,68 @@ class _Question1State extends State<Question1> {
             endIndent: 52,
             indent: 52,
           ),
-         ...questions[0]["answers"].map((answer){
-           radioo(
-             Title: answer,
-           );
-         }),
+          Row(
+            textDirection: TextDirection.rtl,
+            children: [
+              Radio(
+                value: 1,
+                groupValue: _value,
+                onChanged:(value){
+                  setState(() {
+                    _value=value!;
+                  });
+                },
+              ),
+              Text("نصوص الأهرام"),
+            ],
+          ),
+          Row(
+            textDirection: TextDirection.rtl,
+            children: [
+              Radio(
+                value: 2,
+                groupValue: _value,
+                onChanged:(value){
+                  setState(() {
+                    _value=value!;
+                  });
+                },
+              ),
+              Text("نصوص التوابيت"),
+            ],
+          ),
+          Row(
+            textDirection: TextDirection.rtl,
+            children: [
+              Radio(
+                value:3 ,
+                groupValue: _value,
+                onChanged:(value){
+                  setState(() {
+                    _value=value!;
+                  }
+                  );
+                },
+              ),
+              Text("نصوص الأهرام"),
+            ],
+          ),
+          Row(
+            textDirection: TextDirection.rtl,
+            children: [
+              Radio(
+                value: 4,
+                groupValue: _value,
+                onChanged:(value){
+                  setState(() {
+                    _value=value!;
+                  });
+                },
+
+              ),
+              Text("نصوص الأهرام"),
+            ],
+          ),
           Divider(
             color: Color(0xff006672) ,
             endIndent: 52,
@@ -83,11 +128,11 @@ class _Question1State extends State<Question1> {
           SizedBox(height: 10,),
           ElevatedButton(
               onPressed:(){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> Question2(),
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> Question1(),
                 )
                 );
               } ,
-              child: Text("التالى"),
+              child: Text("ارسال"),
               style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xff006672),
                   minimumSize: Size(110, 40),
@@ -98,7 +143,7 @@ class _Question1State extends State<Question1> {
               )
           ),
           SizedBox(height: 30,),
-          Text("(1/6)"),
+          Text("(6/6)"),
         ],
       ),
     );
