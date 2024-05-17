@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:quizapp/fetures/views/Home.dart';
+import 'package:quizapp/fetures/check_answer/views/check_answers.dart';
+import 'package:quizapp/fetures/home/views/Home.dart';
+import 'package:quizapp/fetures/views/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
-      home: Question1(),
+      home: Splash_Screen(),
     );
   }
 }
